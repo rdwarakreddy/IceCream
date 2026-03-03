@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cremeverse Menu</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b6c",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221016",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#181113] dark:text-white min-h-screen">
+     <nav class="sticky top-0 z-50 px-3 py-3">
+        <div class="max-w-7xl mx-auto glass-nav rounded-2xl border border-white/20 shadow-md px-4 py-3">
+
+            <!-- Main Row -->
+            <div class="flex items-center justify-between">
+
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center">
+                    <img src="https://cremeverse.com/wp-content/uploads/2025/05/IMG_6598-1024x308.png"
+                        alt="Cremeverse Logo" class="h-8 sm:h-9 lg:h-10 w-auto object-contain">
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-10">
+
+                    <!-- Navigation -->
+                    <div class="flex items-center gap-8">
+                        <a class="text-sm font-semibold hover:text-primary transition-colors"
+                            href="HomePage.html" aria-current="page">
+                            Home
+                        </a>
+                        <a class="text-sm font-semibold hover:text-primary transition-colors"
+                            href="AboutPage.html">About</a>
+                        <a class="text-sm font-semibold hover:text-primary transition-colors"
+                            href="GallerySection.html">Gallery</a>
+                        <a class="text-sm font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full transition-colors" href="MenuSection.html">Menu</a>
+                        <a class="text-sm font-semibold hover:text-primary transition-colors"
+                            href="ContactPage.html">Contact Us</a>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="flex items-center gap-4 border-l border-black/10 pl-6">
+                        <a href="#"
+                            class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button id="menu-btn" class="lg:hidden text-2xl p-2 rounded-lg hover:bg-black/5 transition-all">
+                    ☰
+                </button>
+
+            </div>
+
+            <!-- Mobile Dropdown -->
+            <div id="mobile-menu" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out lg:hidden">
+
+                <div class="flex flex-col mt-5 space-y-4 pb-4 border-t border-black/10 pt-5">
+
+                    <a href="HomePage.html" aria-current="page" class="block w-full text-center text-sm font-semibold 
+          bg-primary text-white 
+          px-5 py-3 
+          rounded-xl 
+          shadow-sm 
+          transition-all">
+                        Home
+                    </a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors text-center"
+                        href="AboutPage.html">About</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors text-center"
+                        href="GallerySection.html">Gallery</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors text-center"
+                        href="MenuSection.html">Menu</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors text-center"
+                        href="ContactPage.html">Contact Us</a>
+
+                    <div class="flex justify-center gap-4 pt-4">
+                        <a href="#"
+                            class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuBtn.addEventListener("click", () => {
+            if (mobileMenu.classList.contains("max-h-0")) {
+                mobileMenu.classList.remove("max-h-0");
+                mobileMenu.classList.add("max-h-screen");
+            } else {
+                mobileMenu.classList.add("max-h-0");
+                mobileMenu.classList.remove("max-h-screen");
+            }
+        });
+    </script>
+    <main class="max-w-[1200px] mx-auto px-6 py-8">
+        <div class="mb-10 text-center">
+            <h1 class="text-4xl md:text-5xl font-black text-[#181113] dark:text-white mb-4">Explore the Verse of Flavors
+            </h1>
+            <p class="text-[#89616f] dark:text-white/60 text-lg max-w-2xl mx-auto">
+                Handcrafted scoops, decadent sundaes, and plant-based treats made with love in our creamery.
+            </p>
+        </div>
+        <div class="max-w-2xl mx-auto mb-10">
+            <label class="flex flex-col min-w-40 h-14 w-full group">
+                <div
+                    class="flex w-full flex-1 items-stretch rounded-full h-full shadow-sm group-focus-within:ring-2 group-focus-within:ring-primary/30 transition-all overflow-hidden border border-[#e6dbdf] dark:border-[#3d242c]">
+                    <div
+                        class="text-[#89616f] flex border-none bg-white dark:bg-[#2d181f] items-center justify-center pl-6 pr-2">
+                        <span class="material-symbols-outlined text-2xl">search</span>
+                    </div>
+                    <input
+                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-[#181113] dark:text-white focus:outline-0 focus:ring-0 border-none bg-white dark:bg-[#2d181f] h-full placeholder:text-[#89616f] px-4 text-base font-normal leading-normal"
+                        placeholder="Search for your favorite flavor..." value="" />
+                </div>
+            </label>
+        </div>
+        <div class="mb-6 overflow-x-auto">
+            <div class="flex border-b border-[#e6dbdf] dark:border-[#3d242c] gap-8 whitespace-nowrap">
+                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-3 pt-2"
+                    href="#">
+                    <p class="text-sm font-bold tracking-[0.015em]">All Flavors</p>
+                </a>
+                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#89616f] dark:text-white/60 pb-3 pt-2 hover:text-primary transition-colors"
+                    href="#">
+                    <p class="text-sm font-bold tracking-[0.015em]">Classic Scoops</p>
+                </a>
+                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#89616f] dark:text-white/60 pb-3 pt-2 hover:text-primary transition-colors"
+                    href="#">
+                    <p class="text-sm font-bold tracking-[0.015em]">Gourmet Sundaes</p>
+                </a>
+                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#89616f] dark:text-white/60 pb-3 pt-2 hover:text-primary transition-colors"
+                    href="#">
+                    <p class="text-sm font-bold tracking-[0.015em]">Vegan Options</p>
+                </a>
+            </div>
+        </div>
+        <div class="space-y-16">
+            <section>
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-2xl font-bold border-l-4 border-primary pl-4">Classic Scoops</h2>
+                    <span
+                        class="text-sm font-semibold text-[#89616f] dark:text-white/40 uppercase tracking-widest">Starting
+                        at $4.50</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div
+                        class="bg-white dark:bg-[#2d181f] rounded-xl p-5 shadow-sm border border-[#f4f0f2] dark:border-[#3d242c] transition-all">
+                        <div class="aspect-video w-full rounded-lg mb-4 bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCiK8Pmua73N2jyDirPCOndX_ToFQZGwracxO3_Nd7CjfjE6d-7LHr6xgOtABUr89KhqpQGXcCGw1H7leqMiCzEsX5Y23ZB493gGsODCOeBr8ScAKVT404YmE59b0Cw363Cdnx6SNYVrObymlsIe9_nUhTz2Xge9MgyL7uqSwHP5o1X93VABXMxKds16Pn_WVoDiYSdX3SyYroNHnxglafcfPkOVelTGcetl5ynawsVvtFJ4d9UuvQKPVjcdvOLZTxfxq3Au4uRtJI');">
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold">Madagascar Vanilla</h3>
+                            <span class="text-primary font-bold">$4.50</span>
+                        </div>
+                        <p class="text-[#89616f] dark:text-white/60 text-sm leading-relaxed mb-4">Pure, double-fold
+                            vanilla bean with a creamy, custard-like texture.</p>
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="px-2 py-1 bg-background-light dark:bg-background-dark text-[10px] font-bold rounded uppercase">Gluten-Free</span>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-[#2d181f] rounded-xl p-5 shadow-sm border border-[#f4f0f2] dark:border-[#3d242c] transition-all">
+                        <div class="aspect-video w-full rounded-lg mb-4 bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC9lQ6k1D3YD4gDIJzb_LFeviXUqL9NLKMqtt5oEZGPHD6-8Cyq0o8vtJabR6Fcze2tA3ZFjpFlZuQ0L3E7cLqSRK-4lU5BLoCh0PWf8Kl5k8VMfiJrcgJESFxUPSlPqMvH57rEOobXMlgTW_dLYfQqEBUx1a2hO-vEuajhxo5eoOmRqCCNC63rMfqRenr_EBe3oZBpRK0ugnP1dKINHv0tDRdkRqs_hinScanzBWxq2lJ_uCNmhWTOgsofur00Hv4HaUUuYJasy1A');">
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold">Midnight Cacao</h3>
+                            <span class="text-primary font-bold">$4.50</span>
+                        </div>
+                        <p class="text-[#89616f] dark:text-white/60 text-sm leading-relaxed mb-4">72% dark chocolate
+                            churned with organic cocoa nibs for a satisfying crunch.</p>
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="px-2 py-1 bg-background-light dark:bg-background-dark text-[10px] font-bold rounded uppercase">Best
+                                Seller</span>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-[#2d181f] rounded-xl p-5 shadow-sm border border-[#f4f0f2] dark:border-[#3d242c] transition-all">
+                        <div class="aspect-video w-full rounded-lg mb-4 bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjCvi5E1xxpzDAhEjxv2eodtycu-v0SuTWyOrLRyy57hdzG_AUsvG6zQYpZfEH_S3trE9AAZ5SLmKpyMg-rkQfa4RHcrMqWmNmEBG7W9HEPTFvRFYJ4ahDRTxt9SSdYR62yOQ5_5SnMtJ4JCCRNrArdZOtxHLJhKz4OEwS4gqgcLeabA9NFI9axXbe7SveQDgdkz9uElEAxcEu6bJL2EX6zp-M5QD03VGtebjUCD2Gboyfoj9QW3SEhM7UkmxP8UVO4YFruDqvqzc');">
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-bold">Sea Salt Caramel</h3>
+                            <span class="text-primary font-bold">$5.25</span>
+                        </div>
+                        <p class="text-[#89616f] dark:text-white/60 text-sm leading-relaxed mb-4">House-made burnt
+                            caramel swirled into salted sweet cream.</p>
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="px-2 py-1 bg-background-light dark:bg-background-dark text-[10px] font-bold rounded uppercase">Nut-Free</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-2xl font-bold border-l-4 border-primary pl-4">Gourmet Sundaes</h2>
+                    <span
+                        class="text-sm font-semibold text-[#89616f] dark:text-white/40 uppercase tracking-widest">Premium
+                        Creations</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div
+                        class="flex flex-col md:flex-row bg-white dark:bg-[#2d181f] rounded-xl overflow-hidden shadow-sm border border-[#f4f0f2] dark:border-[#3d242c]">
+                        <div class="md:w-1/3 h-48 md:h-auto bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDovXZHuByqiLcW_RxFyNx-cI5tsKPKAbpAvGAwawtFQJ1JKIbf4oLUNbilCeklZ3TTu8XCJAuZIPT6CsvBgNKRQY9g-ndxcoXv_rS83ckFgC8HVhB1hpopoBd4JKvt8LSSojwkKW164yfbRCPBLTkbQqQkLJfMvh7mVANuXgh5I7BeVscUzL8hmYg_cPylvlhNnR3nJpcEcTN5cgVApdseZ5k2Ng1iv2-oqAWveIZOUJfXyWUbL4DDWTRttt6xVhpy2KvveRyovU4');">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex justify-between mb-2">
+                                <h3 class="text-xl font-bold">The Meteor Shower</h3>
+                                <span class="text-primary font-extrabold">$11.50</span>
+                            </div>
+                            <p class="text-[#89616f] dark:text-white/60 text-sm mb-4">Three scoops of Midnight Cacao,
+                                hot fudge lava, brownie chunks, and silver dust sprinkles.</p>
+                            <div class="mt-auto flex gap-4">
+                                <button
+                                    class="text-sm font-bold text-[#89616f] dark:text-white/60 hover:text-primary flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-lg">info</span> Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col md:flex-row bg-white dark:bg-[#2d181f] rounded-xl overflow-hidden shadow-sm border border-[#f4f0f2] dark:border-[#3d242c]">
+                        <div class="md:w-1/3 h-48 md:h-auto bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC05yCaktYiU3KcKVJcqZzsQdU8ZVCFX8QATEhZWui6i49aHQ-felJYn2lHJYHQ2lN_RDFZr-laszGsBdK1F9CkDzbTSw7HHIZitq34Kd1h5SDZIp1u6tsEgq4H6WG3VFU5rZReOGBFJjwBxk5aV7QBCn8S-f2qZQc6lqOwt8Of199W_Qhy9kwPutAq-0KSGoc87Wh6zynPRlsK3Do45AYNK4HOy85_z6DCMOnnSQweSPhQ4Eu34dwWUjcskGnkjA6BJeqTDQUq3Aw');">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex justify-between mb-2">
+                                <h3 class="text-xl font-bold">Berry Nebula</h3>
+                                <span class="text-primary font-extrabold">$10.75</span>
+                            </div>
+                            <p class="text-[#89616f] dark:text-white/60 text-sm mb-4">Wild strawberry scoops, cheesecake
+                                bites, fresh macerated berries, and a white chocolate drizzle.</p>
+                            <div class="mt-auto flex gap-4">
+                                <button
+                                    class="text-sm font-bold text-[#89616f] dark:text-white/60 hover:text-primary flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-lg">info</span> Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-2xl font-bold border-l-4 border-primary pl-4">Vegan Options</h2>
+                    <span
+                        class="text-sm font-semibold text-green-600 dark:text-green-400 uppercase tracking-widest flex items-center gap-1">
+                        <span class="material-symbols-outlined text-lg">eco</span> Plant-Based
+                    </span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div
+                        class="bg-white dark:bg-[#2d181f] rounded-xl p-4 border border-[#f4f0f2] dark:border-[#3d242c]">
+                        <div class="aspect-square w-full rounded-lg mb-3 bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBRkWK4r-HkzXLUqVPVTBtLGoq5ZdAoO95xkhGPJOiNfX36XaUKVUGcpOq2aqZ3l2yFW6d_uwsjq1P-xWz9NA6pOqf5ghHOXpoHmj-f0Wi17O0_nOZILKfba0GHDxUQP0aCOZNVruGoGcSNCaesGJAvc9iGROyj78cK2dmuDPO_eqidSxaiadrnlTOZ6Pc04c9B3AFDJ5SqeWun8kvO26vwbNhBnatcozrt6J-TbudBUfB4AsLk0kTvhzH6ZCS8G0M-8MSQj5Ff-Vk');">
+                        </div>
+                        <h3 class="text-base font-bold mb-1">Toasted Coconut</h3>
+                        <p class="text-xs text-[#89616f] dark:text-white/60 mb-3 line-clamp-2">Coconut milk base with
+                            toasted flakes and organic agave.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$5.50</span>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-[#2d181f] rounded-xl p-4 border border-[#f4f0f2] dark:border-[#3d242c]">
+                        <div class="aspect-square w-full rounded-lg mb-3 bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHUliC93vBus9P8DZCtto-pUyjgwrIk-aRnAvZGDloM1V9nYc5KF2MmQ5nvv3qiA9aQhDy21x1w6Wjj0GvAG7KZVZNLaNvXeJ621HVmnEdQxxmzxTMpG6_LZ9qJ6hNUVzAKeYZBgPGI1BuFYc31X4ZVdmc1g2qZqq1-fVq1NKPwkryF3994_Q-BU_XY0iyiuXDd-dW_M-WxuQX1fKsAVmsZ5PT78ADpNa7vzg7e7Wi_32oXBimw5HDC5GfkOFDAGmwkh3SEa3ya9E');">
+                        </div>
+                        <h3 class="text-base font-bold mb-1">Alphonso Mango Sorbet</h3>
+                        <p class="text-xs text-[#89616f] dark:text-white/60 mb-3 line-clamp-2">Pure fruit sorbet made
+                            with sun-ripened Indian mangoes.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$4.75</span>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-[#2d181f] rounded-xl p-4 border border-[#f4f0f2] dark:border-[#3d242c]">
+                        <div class="aspect-square w-full rounded-lg mb-3 bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADMgTz5J_e9wxeACQRuwcPtLr3p8VfxgDvRhxWfmk-Pdn3Ix-S7o9aYkSEM47DENv7Le-v9qmBQrzNQg7-qqOMxwfVJSZW8aTGOMZvFPiJG58h_oTXqsRl2UEKpPZ20wuy74ylqx9pzCEvbhi_IuDta_AhNvwBY7UW2Au67jz-DsJIlXFVhKwS7sFVOPeMyZjUuCqxK-RFUbRgVVMmtHMbVQY64MR70tiW2GIIYDSzCEbIkl0gBWM2keXFP_CWoVWUjLMHTY5P6Yo');">
+                        </div>
+                        <h3 class="text-base font-bold mb-1">Oat Milk Cookie Dough</h3>
+                        <p class="text-xs text-[#89616f] dark:text-white/60 mb-3 line-clamp-2">Creamy oat milk base with
+                            chunks of vegan cookie dough.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$5.50</span>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-[#2d181f] rounded-xl p-4 border border-[#f4f0f2] dark:border-[#3d242c]">
+                        <div class="aspect-square w-full rounded-lg mb-3 bg-cover bg-center"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAEsRomtgcKaqp82xDW04AH_48uVNrP0lZ-vtn-7pqkjgsQxL5VJmQlDRQdtYlh2GY6lxC8P060IDmAV6msQcEzR7VG-hOlPOlaOB9otoZvwVEomjXcwSkEW-5YKkAoV7hDfqZMMJQjZF8Lu5ecVU2-tRQZKhecGCblAwXi596snF15Tbc3708eWg3e3DDgSXqLUMGnja4rAGOzzY7aShP8rXtkA41-2aLmNLJ9qTDDXtWLsL-hT1nz09EC2E5rm4uq6vFw-6sYobY');">
+                        </div>
+                        <h3 class="text-base font-bold mb-1">Raspberry Hibiscus</h3>
+                        <p class="text-xs text-[#89616f] dark:text-white/60 mb-3 line-clamp-2">Refreshing floral and
+                            tart combination. Light and low-cal.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">$4.25</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="flex flex-col items-center justify-center py-20 gap-4">
+            <p class="text-sm font-medium text-[#89616f] dark:text-white/40 italic">Showing 12 of 48 cosmic flavors</p>
+            <button
+                class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-full h-12 px-6 bg-[#f4f0f2] dark:bg-[#2d181f] border border-[#e6dbdf] dark:border-[#3d242c] text-[#181113] dark:text-white text-base font-bold tracking-[0.015em] hover:bg-white dark:hover:bg-[#3d242c] transition-all">
+                Load More Flavors
+            </button>
+        </div>
+    </main>
+    <footer class="bg-white dark:bg-background-dark border-t border-black/5 dark:border-white/5 pt-20 pb-10 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="size-8 bg-primary rounded-full flex items-center justify-center text-white">
+                            <span class="material-symbols-outlined text-lg">icecream</span>
+                        </div>
+                        <h2 class="text-xl font-extrabold tracking-tight text-primary">Cremeverse</h2>
+                    </div>
+                    <p class="text-gray-500 dark:text-gray-400 leading-relaxed">
+                        Spreading joy one scoop at a time since 2024. Handcrafted, organic, and simply better.
+                    </p>
+                    <div class="flex flex-col gap-4">
+                        <h4 class="font-bold text-lg">Follow Us</h4>
+                        <div class="flex gap-4">
+                            <a aria-label="Instagram"
+                                class="size-11 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all group"
+                                href="#">
+                                <i class="fa-brands fa-instagram text-xl"></i>
+                            </a>
+                            <a aria-label="Facebook"
+                                class="size-11 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all group"
+                                href="#">
+                                <i class="fa-brands fa-facebook-f text-xl"></i>
+                            </a>
+                            <a aria-label="Twitter"
+                                class="size-11 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all group"
+                                href="#">
+                                <i class="fa-brands fa-twitter text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Contact Info</h4>
+                    <ul class="space-y-4 text-gray-500 dark:text-gray-400">
+                        <li class="flex items-start gap-4">
+                            <span
+                                class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg text-xl">location_on</span>
+                            <span>123 Creamy Lane, Sweet City,<br />SC 54321</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span
+                                class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg text-xl">call</span>
+                            <span>(555) 123-CREME</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span
+                                class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg text-xl">mail</span>
+                            <span>hello@cremeverse.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Opening Timings</h4>
+                    <div class="bg-black/5 dark:bg-white/5 p-6 rounded-xl border border-black/5 dark:border-white/10">
+                        <ul class="space-y-3 text-gray-500 dark:text-gray-400">
+                            <li
+                                class="flex justify-between items-center pb-2 border-b border-black/5 dark:border-white/5">
+                                <span class="font-semibold">Mon - Thu</span>
+                                <span>11:00 AM - 10:00 PM</span>
+                            </li>
+                            <li
+                                class="flex justify-between items-center pb-2 border-b border-black/5 dark:border-white/5">
+                                <span class="font-semibold text-primary">Fri - Sat</span>
+                                <span class="text-primary font-bold">11:00 AM - 12:00 AM</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="font-semibold">Sunday</span>
+                                <span>12:00 PM - 09:00 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-black/5 dark:border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+                <p>© 2024 Cremeverse Artisanal Ice Cream. All Rights Reserved.</p>
+                <div class="flex gap-8">
+                    <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+                    <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <button
+        class="fixed bottom-8 right-8 size-12 rounded-full bg-primary text-white shadow-xl flex items-center justify-center hover:scale-110 transition-transform z-40">
+        <span class="material-symbols-outlined">expand_less</span>
+    </button>
+
+</body>
+
+</html>

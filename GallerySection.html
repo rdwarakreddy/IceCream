@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cremeverse Gallery | Sweet Moments</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b6c",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221016",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+        .gallery-item img {
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-[#181113] dark:text-white antialiased transition-colors duration-300">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <nav class="sticky top-0 z-50 px-3 py-3">
+            <div class="max-w-7xl mx-auto glass-nav rounded-2xl border border-white/20 shadow-md px-4 py-3">
+
+                <!-- Main Row -->
+                <div class="flex items-center justify-between">
+
+                    <!-- Logo -->
+                    <a href="index.html" class="flex items-center">
+                        <img src="https://cremeverse.com/wp-content/uploads/2025/05/IMG_6598-1024x308.png"
+                            alt="Cremeverse Logo" class="h-8 sm:h-9 lg:h-10 w-auto object-contain">
+                    </a>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden lg:flex items-center gap-10">
+
+                        <!-- Navigation -->
+                        <div class="flex items-center gap-8">
+                            <a class="text-sm font-semibold hover:text-primary transition-colors"
+                                href="HomePage.html" aria-current="page">
+                                Home
+                            </a>
+                            <a class="text-sm font-semibold hover:text-primary transition-colors"
+                                href="AboutPage.html">About</a>
+                            <a class="text-sm font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full transition-colors"
+                                href="GallerySection.html">Gallery</a>
+                            <a class="text-sm font-semibold hover:text-primary transition-colors"
+                                href="MenuSection.html">Menu</a>
+                            <a class="text-sm font-semibold hover:text-primary transition-colors"
+                                href="ContactPage.html">Contact Us</a>
+                        </div>
+
+                        <!-- Social Icons -->
+                        <div class="flex items-center gap-4 border-l border-black/10 pl-6">
+                            <a href="#"
+                                class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#"
+                                class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Hamburger -->
+                    <button id="menu-btn" class="lg:hidden text-2xl p-2 rounded-lg hover:bg-black/5 transition-all">
+                        ☰
+                    </button>
+
+                </div>
+
+                <!-- Mobile Dropdown -->
+                <div id="mobile-menu" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out lg:hidden">
+
+                    <div class="flex flex-col mt-5 space-y-4 pb-4 border-t border-black/10 pt-5">
+
+                        <a href="HomePage.html" aria-current="page" class="block w-full text-center text-sm font-semibold 
+          bg-primary text-white 
+          px-5 py-3 
+          rounded-xl 
+          shadow-sm 
+          transition-all">
+                            Home
+                        </a>
+                        <a class="text-sm font-semibold hover:text-primary transition-colors text-center"
+                            href="AboutPage.html">About</a>
+                        <a class="text-sm font-semibold hover:text-primary transition-colors text-center"
+                            href="GallerySection.html">Gallery</a>
+                        <a class="text-sm font-semibold hover:text-primary transition-colors text-center"
+                            href="MenuSection.html">Menu</a>
+                        <a class="text-sm font-semibold hover:text-primary transition-colors text-center"
+                            href="ContactPage.html">Contact Us</a>
+
+                        <div class="flex justify-center gap-4 pt-4">
+                            <a href="#"
+                                class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#"
+                                class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuBtn.addEventListener("click", () => {
+            if (mobileMenu.classList.contains("max-h-0")) {
+                mobileMenu.classList.remove("max-h-0");
+                mobileMenu.classList.add("max-h-screen");
+            } else {
+                mobileMenu.classList.add("max-h-0");
+                mobileMenu.classList.remove("max-h-screen");
+            }
+        });
+    </script>
+        <main class="flex-1 max-w-[1200px] mx-auto w-full px-6 py-12">
+            <div class="mb-12">
+                <h1 class="text-5xl font-black tracking-tight mb-4">Our Moments</h1>
+                <p class="text-[#89616f] dark:text-white/60 text-lg max-w-2xl leading-relaxed">
+                    A visual journey through the colorful world of Cremeverse. From artisanal scoops to the smiles that
+                    make it all worthwhile.
+                </p>
+            </div>
+            <div class="flex gap-3 mb-10 overflow-x-auto pb-2 no-scrollbar">
+                <button
+                    class="flex h-10 shrink-0 items-center justify-center rounded-full bg-primary px-6 text-sm font-bold text-white shadow-md">
+                    All
+                </button>
+                <button
+                    class="flex h-10 shrink-0 items-center justify-center rounded-full bg-white dark:bg-white/10 px-6 text-sm font-medium hover:bg-primary/10 hover:text-primary transition-colors border border-transparent dark:border-white/10">
+                    Signature Flavors
+                </button>
+                <button
+                    class="flex h-10 shrink-0 items-center justify-center rounded-full bg-white dark:bg-white/10 px-6 text-sm font-medium hover:bg-primary/10 hover:text-primary transition-colors border border-transparent dark:border-white/10">
+                    Happy Customers
+                </button>
+                <button
+                    class="flex h-10 shrink-0 items-center justify-center rounded-full bg-white dark:bg-white/10 px-6 text-sm font-medium hover:bg-primary/10 hover:text-primary transition-colors border border-transparent dark:border-white/10">
+                    Shop Interior
+                </button>
+                <button
+                    class="flex h-10 shrink-0 items-center justify-center rounded-full bg-white dark:bg-white/10 px-6 text-sm font-medium hover:bg-primary/10 hover:text-primary transition-colors border border-transparent dark:border-white/10">
+                    Events
+                </button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div
+                    class="gallery-item group relative aspect-[4/5] overflow-hidden rounded-xl bg-gray-100 dark:bg-white/5 cursor-zoom-in shadow-sm hover:shadow-xl transition-shadow">
+                    <img alt="Strawberry Dream" class="h-full w-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4liWIGpnXh540BbS6WBrALdVzx1zUblLhELZrycUXalF_ILBvkaklO_MLWasGBIUlI69tzG-_58IDZZUr8YP5we-gPVDaqe4sKa_1NBWdXqtXpaA_XfDSEKLbJhF07_XdE9dBaJg0iCDVurCL3uSMN--qbW4Wba5D4b-VMvFYrqJyodFjQYCNLtft36bXSqo4RppGYPNk7FSctySoe-5H5wU-UhGGzuUsMlhrx4be8inm-UEIpQLo2rhrXeOmKnEuE0hd_0Jxa3g" />
+                    <div
+                        class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+                        <p class="font-bold text-xl mb-1">Strawberry Dream</p>
+                        <p class="text-white/80 text-sm">Fresh berries and organic cream.</p>
+                        <div class="mt-4 flex gap-2">
+                            <span
+                                class="material-symbols-outlined text-white/90 hover:text-primary cursor-pointer transition-colors">favorite</span>
+                            <span
+                                class="material-symbols-outlined text-white/90 hover:text-primary cursor-pointer transition-colors">share</span>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-gray-100 dark:bg-white/5 cursor-zoom-in">
+                    <img alt="Pure Joy" class="h-full w-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqV4LoafDxYBs8IlqD04UX6P2m38n6l0CABEulMIc-zH_UtNyYSzIOpButubGlfeiFtOktfxGuku1QHNMZHcgNPP1S8WrsN23pO3wvsjDYn80OcsXVljRQk-OkSbZURK6Xnb9WjVOss1UfWGnqUTlHwF9FoVPQVQ92WtwNJiwqVcU-67M9RBO4RfzO24uBl-8DmXHUpkftn8CLSCKUQwMffH0tzUveUGvjo5sE-Gs6luuBoOL0bpSeaW0foUITdVgyhSP3f01gnSM" />
+                    <div
+                        class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+                        <p class="font-bold text-xl mb-1">Pure Joy</p>
+                        <p class="text-white/80 text-sm">Capturing sweet smiles daily.</p>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item group relative aspect-[4/5] overflow-hidden rounded-xl bg-gray-100 dark:bg-white/5 cursor-zoom-in">
+                    <img alt="The Pastel Corner" class="h-full w-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb0FAclKI9aZv_tJC9L8N0_9mEnsa1HzzbmQkqLBw4XsDHvhbxqF_I8ZCJn0ZnPjXHOsZV_Uaast-5p52Drm3utmQQhxUrIaMhUBccEp1002V9Mt8UQVGpCd9_VJiXNZY1sPXe9ABcxGQebvKOsb7dr52I98IsU3AXpZzdyN4-4qP0qu6RDU9rJUkeDbtpGt1ufVu3JKqnBokQ_vtVd3hDjqjCuSZOgwIDMwaK3MC1kPOXpaj1e0s7tlgI7y--WU_7NsHT4qqhEXE" />
+                    <div
+                        class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+                        <p class="font-bold text-xl mb-1">The Pastel Corner</p>
+                        <p class="text-white/80 text-sm">Where aesthetics meet flavor.</p>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-gray-100 dark:bg-white/5 cursor-zoom-in">
+                    <img alt="Minty Freshness" class="h-full w-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_kG_O7HsQnjs2H86z-InI8EFLaHVsHH5c4ZVBBr-oJ2WitRic6hiRQRPDDRjrLuxE9ZdgOxMlUvk-6pQ0OX5ebQHNonxXO12C51O1P132BBrLDA4n7DBU8CsT7HPRvV2Ry_VF7ambesQq4eFsnxcbDNPpgwsgODcEil1BQRU0zYtqdz_0lAXgo_NaAVImPqc3nxc8UayFEZb-U3cP1IvoTH5obpQROKQHvkM76ca1wJXoEVCkPhCC96mi1zSwlJezJ3oRbTa5BOQ" />
+                    <div
+                        class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+                        <p class="font-bold text-xl mb-1">Minty Freshness</p>
+                        <p class="text-white/80 text-sm">Double scoop magic.</p>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item group relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-100 dark:bg-white/5 cursor-zoom-in">
+                    <img alt="The Full Palette" class="h-full w-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhFeGj1u_1ILheitoJvvm6qwRpQiucFmkjKU-SUlK3RWJpUyj4OJF2T8j3ZwPxkK5aKHrpEyh4mhZv-y3-v2lJ-s68CbbFor7BV4GvBztWpNasr_zyR9k-oh2w_p_xAP7ZNIdRGnsgpx-0-dOYRRB-leoTRr_SkLMF2yKYhhx5aYtP9S_vE1-gZqltUgu8QM-yg4muLFVunXSbBDhWcjJHvlIT_xUULOZw2ImjDhtzMknEAUcvYj4BMZEVkSoXBcopRHZd5X1RcPQ" />
+                    <div
+                        class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+                        <p class="font-bold text-xl mb-1">The Full Palette</p>
+                        <p class="text-white/80 text-sm">Too many choices? Try them all.</p>
+                    </div>
+                </div>
+                <div
+                    class="gallery-item group relative aspect-square overflow-hidden rounded-xl bg-gray-100 dark:bg-white/5 cursor-zoom-in">
+                    <img alt="Neon Vibes" class="h-full w-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRmtPFhaVNHMstQl6ResVcfaEcDJ5bH_BGBbHiaLt8adDCJ3U4_cNaq2rQPOjorQ4QS0OF_Zk6cD4vpab6Oor6nGelzI1l2T125gut6TmWf5SBgdwZctQy_i8wicuoF5RNAx2iTFtbTwve3ccmQ5DHtSvtcPqAMj75r64_aJU9zEntaa1X16VNqJs42wFgHP3JFyw4VRvZhn1Rqh9KOQK3bNzXiZ_Ri5pwsizcridChTnXll5qskXx-irFTJ-5ijxnCaOAOwamdcQ" />
+                    <div
+                        class="overlay absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6 text-white">
+                        <p class="font-bold text-xl mb-1">Neon Vibes</p>
+                        <p class="text-white/80 text-sm">Stay Sweet with us.</p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="mt-24 mb-12 rounded-xl bg-primary/10 dark:bg-primary/5 p-12 text-center border border-primary/20">
+                <h2 class="text-3xl md:text-4xl font-black mb-4">Follow the flavor journey</h2>
+                <p class="text-lg text-[#89616f] dark:text-white/70 mb-8 max-w-xl mx-auto">
+                    Our story unfolds daily. Join our community for exclusive flavor drops and behind-the-scenes magic.
+                </p>
+                <div class="flex justify-center gap-4">
+                    <a class="flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-lg font-bold text-white hover:scale-105 transition-transform active:scale-95 shadow-xl shadow-primary/30"
+                        href="#">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                            </path>
+                        </svg>
+                        @Cremeverse
+                    </a>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-white dark:bg-background-dark border-t border-black/5 dark:border-white/5 pt-20 pb-10 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3">
+                            <div class="size-8 bg-primary rounded-full flex items-center justify-center text-white">
+                                <span class="material-symbols-outlined text-lg">icecream</span>
+                            </div>
+                            <h2 class="text-xl font-extrabold tracking-tight text-primary">Cremeverse</h2>
+                        </div>
+                        <p class="text-gray-500 dark:text-gray-400 leading-relaxed">
+                            Spreading joy one scoop at a time since 2024. Handcrafted, organic, and simply better.
+                        </p>
+                        <div class="flex flex-col gap-4">
+                            <h4 class="font-bold text-lg">Follow Us</h4>
+                            <div class="flex gap-4">
+                                <a aria-label="Instagram"
+                                    class="size-11 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all group"
+                                    href="#">
+                                    <i class="fa-brands fa-instagram text-xl"></i>
+                                </a>
+                                <a aria-label="Facebook"
+                                    class="size-11 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all group"
+                                    href="#">
+                                    <i class="fa-brands fa-facebook-f text-xl"></i>
+                                </a>
+                                <a aria-label="Twitter"
+                                    class="size-11 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all group"
+                                    href="#">
+                                    <i class="fa-brands fa-twitter text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-6">Contact Info</h4>
+                        <ul class="space-y-4 text-gray-500 dark:text-gray-400">
+                            <li class="flex items-start gap-4">
+                                <span
+                                    class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg text-xl">location_on</span>
+                                <span>123 Creamy Lane, Sweet City,<br />SC 54321</span>
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <span
+                                    class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg text-xl">call</span>
+                                <span>(555) 123-CREME</span>
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <span
+                                    class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg text-xl">mail</span>
+                                <span>hello@cremeverse.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-6">Opening Timings</h4>
+                        <div
+                            class="bg-black/5 dark:bg-white/5 p-6 rounded-xl border border-black/5 dark:border-white/10">
+                            <ul class="space-y-3 text-gray-500 dark:text-gray-400">
+                                <li
+                                    class="flex justify-between items-center pb-2 border-b border-black/5 dark:border-white/5">
+                                    <span class="font-semibold">Mon - Thu</span>
+                                    <span>11:00 AM - 10:00 PM</span>
+                                </li>
+                                <li
+                                    class="flex justify-between items-center pb-2 border-b border-black/5 dark:border-white/5">
+                                    <span class="font-semibold text-primary">Fri - Sat</span>
+                                    <span class="text-primary font-bold">11:00 AM - 12:00 AM</span>
+                                </li>
+                                <li class="flex justify-between items-center">
+                                    <span class="font-semibold">Sunday</span>
+                                    <span>12:00 PM - 09:00 PM</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="border-t border-black/5 dark:border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+                    <p>© 2024 Cremeverse Artisanal Ice Cream. All Rights Reserved.</p>
+                    <div class="flex gap-8">
+                        <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+                        <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

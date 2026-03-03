@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <!DOCTYPE html>
+    <html lang="en" class="light">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About Cremeverse - Where Sweet Moments Begin</title>
+
+        <!-- Tailwind -->
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+
+        <!-- Tailwind Config -->
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#ee2b6c",
+                            "background-light": "#f8f6f6",
+                            "background-dark": "#221016",
+                        },
+                        fontFamily: {
+                            display: ["Plus Jakarta Sans", "sans-serif"],
+                        },
+                        borderRadius: {
+                            DEFAULT: "1rem",
+                            lg: "2rem",
+                            xl: "3rem",
+                            full: "9999px",
+                        },
+                    },
+                },
+            };
+            let currentIndex = 0;
+
+            function slideTestimonial(direction) {
+                const slider = document.getElementById("testimonialSlider");
+                const slides = slider.children.length;
+                const isMobile = window.innerWidth < 768;
+                const visible = isMobile ? 1 : 2;
+
+                currentIndex += direction;
+
+                if (currentIndex < 0) currentIndex = slides - visible;
+                if (currentIndex > slides - visible) currentIndex = 0;
+
+                const translateX = -(currentIndex * (100 / visible));
+                slider.style.transform = `translateX(${translateX}%)`;
+            }
+        </script>
+
+        <!-- Global Styles -->
+        <style>
+            body {
+                font-family: "Plus Jakarta Sans", sans-serif;
+            }
+
+            .glass-nav {
+                backdrop-filter: blur(12px);
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+
+            .dark .glass-nav {
+                background-color: rgba(34, 16, 22, 0.8);
+            }
+
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+
+            .no-scrollbar {
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+        </style>
+    </head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#181113] dark:text-white antialiased">
+
+    <!-- ✅ SAME HEADER AS HOME -->
+     <nav class="sticky top-0 z-50 px-3 py-3">
+        <div class="max-w-7xl mx-auto glass-nav rounded-2xl border border-white/20 shadow-md px-4 py-3">
+
+            <!-- Main Row -->
+            <div class="flex items-center justify-between">
+
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center">
+                    <img src="https://cremeverse.com/wp-content/uploads/2025/05/IMG_6598-1024x308.png"
+                        alt="Cremeverse Logo" class="h-8 sm:h-9 lg:h-10 w-auto object-contain">
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-10">
+
+                    <!-- Navigation -->
+                    <div class="flex items-center gap-8">
+                        <a class="text-sm font-semibold hover:text-primary transition-colors"
+                            href="HomePage.html" aria-current="page">
+                            Home
+                        </a>
+                        <a class="text-sm font-extrabold text-primary bg-primary/10 px-4 py-2 rounded-full transition-colors"
+                            href="AboutPage.html">About</a>
+                        <a class="text-sm font-semibold hover:text-primary transition-colors"
+                            href="GallerySection.html">Gallery</a>
+                        <a class="text-sm font-semibold hover:text-primary transition-colors" href="MenuSection.html">Menu</a>
+                        <a class="text-sm font-semibold hover:text-primary transition-colors"
+                            href="ContactPage.html">Contact Us</a>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="flex items-center gap-4 border-l border-black/10 pl-6">
+                        <a href="#"
+                            class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button id="menu-btn" class="lg:hidden text-2xl p-2 rounded-lg hover:bg-black/5 transition-all">
+                    ☰
+                </button>
+
+            </div>
+
+            <!-- Mobile Dropdown -->
+            <div id="mobile-menu" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out lg:hidden">
+
+                <div class="flex flex-col mt-5 space-y-4 pb-4 border-t border-black/10 pt-5">
+
+                    <a href="HomePage.html" aria-current="page" class="block w-full text-center text-sm font-semibold 
+          bg-primary text-white 
+          px-5 py-3 
+          rounded-xl 
+          shadow-sm 
+          transition-all">
+                        Home
+                    </a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors text-center"
+                        href="AboutPage.html">About</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors text-center"
+                        href="GallerySection.html">Gallery</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors text-center"
+                        href="MenuSection.html">Menu</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors text-center"
+                        href="ContactPage.html">Contact Us</a>
+
+                    <div class="flex justify-center gap-4 pt-4">
+                        <a href="#"
+                            class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="size-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuBtn.addEventListener("click", () => {
+            if (mobileMenu.classList.contains("max-h-0")) {
+                mobileMenu.classList.remove("max-h-0");
+                mobileMenu.classList.add("max-h-screen");
+            } else {
+                mobileMenu.classList.add("max-h-0");
+                mobileMenu.classList.remove("max-h-screen");
+            }
+        });
+    </script>
+    <main class="flex flex-1 flex-col">
+        <div class="px-4 md:px-40 flex justify-center py-5">
+            <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                <div class="@container">
+                    <div class="@[480px]:p-4">
+                        <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-6 text-center"
+                            data-alt="Interior of a cozy, modern ice cream shop"
+                            style='background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDop7uq09BgHN2DY-M-wVNhEKWbrjqSEU8Q7lxgXYMozmipICm4gI62kia-YaGTNwujZ5WNRLewomwCBsAY19oPT6BTIW9DvTO0pd_rYBoX6v0l2fUwFkyLSx9C6n0DKEJzPeXb3mX5SjflGVlsaCCUksKRPe8nE9FxkZsw448td7NK0wtOQQZPAOmpfeQ1RD5GyIBSDVgEiDWOw8IakjLo7L_q0SV1jV05lcHTULI5t-0vl42bGxK1Y6GiVE4Kz-haKSfID77pGlE");'>
+                            <div class="flex flex-col gap-4 max-w-[600px]">
+                                <h1
+                                    class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-6xl">
+                                    Where Sweet Moments Begin
+                                </h1>
+                                <h2 class="text-white/90 text-base font-normal leading-normal @[480px]:text-lg">
+                                    From a small kitchen to a beloved brand, our journey has always been about crafting
+                                    the perfect scoop with the ones we love.
+                                </h2>
+                            </div>
+                            <button
+                                class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]">
+                                <span class="truncate">Discover Our Story</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="px-4 md:px-40 flex justify-center py-10">
+            <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                <div class="flex flex-col items-center text-center px-4">
+                    <h2
+                        class="text-[#181113] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] pb-3">
+                        Our Journey</h2>
+                    <div class="w-16 h-1 bg-primary rounded-full mb-6"></div>
+                    <p class="text-[#89616f] dark:text-gray-400 max-w-[600px] text-lg">Every flavor has a memory, and
+                        every scoop tells a story of passion and craftsmanship.</p>
+                </div>
+            </div>
+        </div>
+        <div class="px-4 md:px-40 flex justify-center py-5">
+            <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                <div class="grid grid-cols-[40px_1fr] md:grid-cols-[60px_1fr] gap-x-4 px-4">
+                    <div class="flex flex-col items-center gap-1 pt-3">
+                        <div class="text-primary flex items-center justify-center bg-primary/10 w-10 h-10 rounded-full">
+                            <span class="material-symbols-outlined">skillet</span>
+                        </div>
+                        <div class="w-[2px] bg-primary/20 h-full grow"></div>
+                    </div>
+                    <div class="flex flex-1 flex-col py-6">
+                        <p class="text-primary text-sm font-bold uppercase tracking-wider mb-1">2015</p>
+                        <p class="text-[#181113] dark:text-white text-xl font-bold leading-normal">The First Batch</p>
+                        <p class="text-[#89616f] dark:text-gray-400 text-base font-normal leading-relaxed mt-2">
+                            Our journey started with a single hand-cranked churner in a small kitchen. Inspired by our
+                            grandmother's recipes, we experimented with local honey and wild berries.
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center gap-1">
+                        <div class="w-[2px] bg-primary/20 h-4"></div>
+                        <div class="text-primary flex items-center justify-center bg-primary/10 w-10 h-10 rounded-full">
+                            <span class="material-symbols-outlined">storefront</span>
+                        </div>
+                        <div class="w-[2px] bg-primary/20 h-full grow"></div>
+                    </div>
+                    <div class="flex flex-1 flex-col py-6">
+                        <p class="text-primary text-sm font-bold uppercase tracking-wider mb-1">2017</p>
+                        <p class="text-[#181113] dark:text-white text-xl font-bold leading-normal">Our First Pop-up</p>
+                        <p class="text-[#89616f] dark:text-gray-400 text-base font-normal leading-relaxed mt-2">
+                            We took our cart to the local farmer's market. Seeing the smiles of our first customers
+                            confirmed our belief: people crave authentic, artisanal treats.
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center gap-1">
+                        <div class="w-[2px] bg-primary/20 h-4"></div>
+                        <div class="text-primary flex items-center justify-center bg-primary/10 w-10 h-10 rounded-full">
+                            <span class="material-symbols-outlined">shutter_speed</span>
+                        </div>
+                        <div class="w-[2px] bg-primary/20 h-full grow"></div>
+                    </div>
+                    <div class="flex flex-1 flex-col py-6">
+                        <p class="text-primary text-sm font-bold uppercase tracking-wider mb-1">2020</p>
+                        <p class="text-[#181113] dark:text-white text-xl font-bold leading-normal">The Flagship Store
+                        </p>
+                        <p class="text-[#89616f] dark:text-gray-400 text-base font-normal leading-relaxed mt-2">
+                            Despite the challenges, we opened our dream shop in the heart of the city. A place designed
+                            for gathering, laughing, and slow-melting afternoons.
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center gap-1 pb-3">
+                        <div class="w-[2px] bg-primary/20 h-4"></div>
+                        <div class="text-primary flex items-center justify-center bg-primary/10 w-10 h-10 rounded-full">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-1 flex-col py-6">
+                        <p class="text-primary text-sm font-bold uppercase tracking-wider mb-1">Today</p>
+                        <p class="text-[#181113] dark:text-white text-xl font-bold leading-normal">Cremeverse Today</p>
+                        <p class="text-[#89616f] dark:text-gray-400 text-base font-normal leading-relaxed mt-2">
+                            Now with three locations, we remain committed to small-batch production and supporting our
+                            local farmers. The community is at the heart of every scoop.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="px-4 md:px-40 flex justify-center py-10 bg-primary/5 dark:bg-primary/10">
+            <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                <div class="flex flex-col gap-10 px-4 py-10 @container">
+                    <div class="flex flex-col gap-4 text-center items-center">
+                        <h2
+                            class="text-[#181113] dark:text-white tracking-light text-3xl font-bold leading-tight @[480px]:text-4xl">
+                            The Faces Behind the Flavor
+                        </h2>
+                        <p class="text-[#89616f] dark:text-gray-300 text-lg max-w-[600px]">
+                            Our dedicated team works tirelessly to bring you artisanal ice cream made with love and only
+                            the finest ingredients.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="flex flex-col gap-4 p-6 bg-white dark:bg-background-dark rounded-xl shadow-sm">
+                            <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl shadow-inner"
+                                data-alt="Artisan making small batch ice cream"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBG7cgAIEcYw8Fhz1DZDIhY5GK8YyLkkBtLHbeLXQFvVulBeR96WKTov8Nh_MeXcQMeg9tFQRjrJ4kfC6kEhi1CvfUrMz5O9LWOAa-eLq4ueaqvrYQDvkzsKreCHAcaIH8gLRlQcv80sv5Lsv5tmF_uG8xnE_3Om7R5csz_zpthqrlhqo-hbr4Pj0o9WpsMFHGUBkcXXlWHMLVKCm-glj8F9Aeo1yHZqtnBkkPq2ooMSRs9xW8qs57-szbmUlM3jNUCSGRHxZnLjyc');">
+                            </div>
+                            <div class="text-center">
+                                <p class="text-[#181113] dark:text-white text-xl font-bold leading-normal">Craftsmanship
+                                </p>
+                                <p class="text-[#89616f] dark:text-gray-400 text-sm font-normal leading-normal mt-2">
+                                    Small-batch production ensuring quality in every bite.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-4 p-6 bg-white dark:bg-background-dark rounded-xl shadow-sm">
+                            <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl shadow-inner"
+                                data-alt="Group of happy friends eating ice cream"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtyzKqYxqmBoyxgArblhOgvIWHB2pilXVV_hoiS9C6WbNRJ1eyQTrLUoDh-Q-JWrVD5Rd-BJGPs9c5J4I1BeESkV9_oY5z7NRUA7MyS6D4-BLJpClwdSX5gHkapKWMKWGGf36rvV_WiV_H3aBiCSRnDyodJa_nEsBjmnZ2xSkX5w1PPnStVSZEaxtzdCVtI7IuG-pHA8Td1Ag7GzpNb0EdX2uhye0nHWnsLrGoJoTxLaTp-IbKNgLgmmPAuEo8rAdel-BPQupqOh4');">
+                            </div>
+                            <div class="text-center">
+                                <p class="text-[#181113] dark:text-white text-xl font-bold leading-normal">Community</p>
+                                <p class="text-[#89616f] dark:text-gray-400 text-sm font-normal leading-normal mt-2">A
+                                    space where everyone feels at home and welcome.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-4 p-6 bg-white dark:bg-background-dark rounded-xl shadow-sm">
+                            <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl shadow-inner"
+                                data-alt="Close up of creamy ice cream scoop"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-FncYn6i0YxqrGN1JUAgtNdOknHJUzB5ouC5C9fCl_6_lahsSze6fGwv-3Ri5IE_mtClDpfeQMFnfj-6aoWUPLbaAhBmU9cyuvQ-ICnmQFc35sYN8V2S1CJ3Bw6oTR7B3X-5Ql39j648pWZOPvWUFX-emSDmTOj7ZWfkDci_9nPmLSJZVo6mdJVu1kgptOQGOteeDlSn1xWt9HWXtMaSfI3RiCSF1Ww_02InmJ5Er3WVq0tXqEg4b_EalaG6BrnVV7usap01-iIE');">
+                            </div>
+                            <div class="text-center">
+                                <p class="text-[#181113] dark:text-white text-xl font-bold leading-normal">Creaminess
+                                </p>
+                                <p class="text-[#89616f] dark:text-gray-400 text-sm font-normal leading-normal mt-2">The
+                                    signature texture that makes us unique and beloved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="px-4 md:px-40 flex justify-center py-20">
+            <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                <h2 class="text-center text-[#181113] dark:text-white text-3xl font-bold mb-12">What Our Neighbors Say
+                </h2>
+                <div class="relative overflow-hidden px-4">
+                    <div id="testimonialSlider" class="flex transition-transform duration-500 ease-in-out">
+
+                        <!-- Testimonial 1 -->
+                        <div class="min-w-full md:min-w-[50%] px-4">
+                            <div class="bg-white dark:bg-white/5 rounded-2xl p-8 shadow-sm h-full">
+                                <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                                    “Cremeverse is hands down the best dessert spot in town. The flavors are rich,
+                                    perfectly balanced, and you can feel the quality in every bite.”
+                                </p>
+
+                                <div class="flex items-center gap-4">
+                                    <img src="https://i.pravatar.cc/100?img=12" alt="Customer"
+                                        class="w-12 h-12 rounded-full object-cover" />
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 dark:text-white">
+                                            Ananya Sharma
+                                        </h4>
+                                        <p class="text-sm text-gray-500">Ice Cream Lover</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="min-w-full md:min-w-[50%] px-4">
+                            <div class="bg-white dark:bg-white/5 rounded-2xl p-8 shadow-sm h-full">
+                                <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                                    “From the ambience to the desserts, everything at Cremeverse feels premium.
+                                    Their signature scoops are a must-try!”
+                                </p>
+
+                                <div class="flex items-center gap-4">
+                                    <img src="https://i.pravatar.cc/100?img=32" alt="Customer"
+                                        class="w-12 h-12 rounded-full object-cover" />
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 dark:text-white">
+                                            Rahul Verma
+                                        </h4>
+                                        <p class="text-sm text-gray-500">Food Blogger</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="min-w-full md:min-w-[50%] px-4">
+                            <div class="bg-white dark:bg-white/5 rounded-2xl p-8 shadow-sm h-full">
+                                <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                                    “Absolutely loved the variety and freshness. Cremeverse has become
+                                    our go-to place for family dessert outings.”
+                                </p>
+
+                                <div class="flex items-center gap-4">
+                                    <img src="https://i.pravatar.cc/100?img=45" alt="Customer"
+                                        class="w-12 h-12 rounded-full object-cover" />
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 dark:text-white">
+                                            Sneha Reddy
+                                        </h4>
+                                        <p class="text-sm text-gray-500">Regular Customer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="flex justify-center gap-4 mt-10">
+                        <button onclick="slideTestimonial(-1)"
+                            class="w-12 h-12 rounded-full bg-primary/10 hover:bg-primary hover:text-white transition">
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+
+                        <button onclick="slideTestimonial(1)"
+                            class="w-12 h-12 rounded-full bg-primary/10 hover:bg-primary hover:text-white transition">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="px-4 md:px-40 flex justify-center py-20">
+            <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                <div class="bg-primary rounded-3xl p-10 md:p-20 text-center flex flex-col items-center gap-8 shadow-xl">
+                    <h2 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Ready for a Scoop?</h2>
+                    <p class="text-white/90 text-lg max-w-[500px]">
+                        Join us at any of our locations and start your own sweet moment today. We can't wait to meet
+                        you!
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button
+                            class="flex min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-white text-primary text-base font-bold leading-normal tracking-[0.015em] hover:bg-background-light transition-all">
+                            Find a Location
+                        </button>
+                        <button
+                            class="flex min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-transparent border-2 border-white text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-white/10 transition-all">
+                            View Full Menu
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-white dark:bg-background-dark border-t border-black/5 dark:border-white/5 pt-20 pb-10 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="size-8 bg-primary rounded-full flex items-center justify-center text-white">
+                            <span class="material-symbols-outlined text-lg">icecream</span>
+                        </div>
+                        <h2 class="text-xl font-extrabold tracking-tight text-primary">Cremeverse</h2>
+                    </div>
+                    <p class="text-gray-500 dark:text-gray-400 leading-relaxed">
+                        Spreading joy one scoop at a time since 2024. Handcrafted, organic, and simply better.
+                    </p>
+                    <div class="flex flex-col gap-4">
+                        <h4 class="font-bold text-lg">Follow Us</h4>
+                        <div class="flex gap-4">
+                            <a aria-label="Instagram"
+                                class="size-11 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all group"
+                                href="#">
+                                <i class="fa-brands fa-instagram text-xl"></i>
+                            </a>
+                            <a aria-label="Facebook"
+                                class="size-11 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all group"
+                                href="#">
+                                <i class="fa-brands fa-facebook-f text-xl"></i>
+                            </a>
+                            <a aria-label="Twitter"
+                                class="size-11 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all group"
+                                href="#">
+                                <i class="fa-brands fa-twitter text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Contact Info</h4>
+                    <ul class="space-y-4 text-gray-500 dark:text-gray-400">
+                        <li class="flex items-start gap-4">
+                            <span
+                                class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg text-xl">location_on</span>
+                            <span>123 Creamy Lane, Sweet City,<br />SC 54321</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span
+                                class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg text-xl">call</span>
+                            <span>(555) 123-CREME</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span
+                                class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg text-xl">mail</span>
+                            <span>hello@cremeverse.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Opening Timings</h4>
+                    <div class="bg-black/5 dark:bg-white/5 p-6 rounded-xl border border-black/5 dark:border-white/10">
+                        <ul class="space-y-3 text-gray-500 dark:text-gray-400">
+                            <li
+                                class="flex justify-between items-center pb-2 border-b border-black/5 dark:border-white/5">
+                                <span class="font-semibold">Mon - Thu</span>
+                                <span>11:00 AM - 10:00 PM</span>
+                            </li>
+                            <li
+                                class="flex justify-between items-center pb-2 border-b border-black/5 dark:border-white/5">
+                                <span class="font-semibold text-primary">Fri - Sat</span>
+                                <span class="text-primary font-bold">11:00 AM - 12:00 AM</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span class="font-semibold">Sunday</span>
+                                <span>12:00 PM - 09:00 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-black/5 dark:border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+                <p>© 2024 Cremeverse Artisanal Ice Cream. All Rights Reserved.</p>
+                <div class="flex gap-8">
+                    <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+                    <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    </div>
+
+</body>
+
+</html>
